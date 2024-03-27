@@ -1,0 +1,9 @@
+{
+  "name": "webdiv",
+  "module": "index.js",
+  "type": "module",
+  "bin": "./index.js",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
