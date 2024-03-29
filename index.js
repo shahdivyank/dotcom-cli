@@ -14,7 +14,7 @@ program
   .command("init")
   .description("Create a New Project")
   .argument("<string>", "Project Name")
-  .action(async (project) => {
+  .action((project) => {
     const cwd = dirname(fileURLToPath(import.meta.url));
     const root = path.resolve();
     try {
