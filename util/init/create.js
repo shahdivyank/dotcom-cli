@@ -1,5 +1,6 @@
 import { resolve, join } from "path";
 import fs from "fs";
+import { execSync } from "child_process";
 
 export const create = (name, path, cwd) => {
   const destination = join(resolve(cwd, path), name);
@@ -13,6 +14,8 @@ export const create = (name, path, cwd) => {
     fs.cpSync(copyFrom, destination, {
       recursive: true,
     });
+
+    execSync(`cd ${destination} && poetry install`);
   } catch (e) {
     throw new Error("Fail init project");
   }
